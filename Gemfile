@@ -42,7 +42,11 @@ gem 'jsonapi-resources'
 # writing and deploying cron jobs
 gem 'whenever', require: false
 
+gem 'rswag'
+
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'rswag-specs'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
