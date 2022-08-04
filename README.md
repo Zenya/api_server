@@ -1,24 +1,46 @@
 # README
+Test task to implement JSON:API server
+### Disclaimer:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Here are a few things I didn't use in the current task. But I always(or almost always) use it in real projects:
 
-Things you may want to cover:
+* use ENV variables to pass sensitive data
+* lock gems version(according to rules of a specific project)
+* model validation
+* rubocop
+* current application available in development mode only
 
-* Ruby version
+## Getting started
 
-* System dependencies
+Here is a short description of versions:
 
-* Configuration
+* Ruby version - 3.0.1
 
-* Database creation
+* Rails version Rails 7.0.3.1
 
-* Database initialization
+Database setup
 
-* How to run the test suite
+```shell
+rails db:setup
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Start server
 
-* Deployment instructions
+```shell
+rails s -p 3000
+```
 
-* ...
+## Features
+
+* rake task to publish Content executes every hour
+```shell
+bundle exec rake content:publish
+```
+* scheduled by `whenever` gem
+```shell
+bundle exec whenever --update-crontab
+```
+* swagger page
+```shell
+http://localhost:3000/api-docs/index.html
+```
